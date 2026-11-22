@@ -19,12 +19,14 @@ jobs:
 
       - name: Mark started
         run: |
+          exec > >(tee -a /tmp/run.log) 2>&1
           mkdir -p results
           printf '{"stage":"started","at":"%s","run":"%s"}\n' "$(date -u +%FT%TZ)" "$GITHUB_RUN_ID" > results/status.json
           bash audit/publish.sh "status started"
 
       - name: Fetch subscription
         run: |
+          exec > >(tee -a /tmp/run.log) 2>&1
           for i in 1 2 3 4; do
             curl -fL --retry 2 -m 120 -o /tmp/jc.yaml "https://aka.doubaocdn.com/s/yRPM6o7bJp" && break
             sleep 8
@@ -34,25 +36,33 @@ jobs:
           bash audit/publish.sh "status fetched"
 
       - name: Install deps
-        run: python3 -m pip install -q pyyaml cryptography
+        run: |
+          exec > >(tee -a /tmp/run.log) 2>&1
+          python3 -m pip install -q pyyaml cryptography
 
       - name: Build inventory
         run: |
+          exec > >(tee -a /tmp/run.log) 2>&1
           python3 audit/build_endpoints.py /tmp/jc.yaml /tmp/endpoints.json /tmp/nodes.json
           N=$(python3 -c 'import json;print(len(json.load(open("/tmp/endpoints.json"))))')
           printf '{"stage":"inventory","endpoints":%s}\n' "$N" > results/status.json
           bash audit/publish.sh "status inventory"
 
       - name: TLS audit
-        run: python3 audit/tlsaudit2.py /tmp/endpoints.json /tmp/tls_results.jsonl
+        run: |
+          exec > >(tee -a /tmp/run.log) 2>&1
+          python3 audit/tlsaudit2.py /tmp/endpoints.json /tmp/tls_results.jsonl
 
       - name: Publish results
         run: |
+          exec > >(tee -a /tmp/run.log) 2>&1
           python3 audit/split2.py /tmp/tls_results.jsonl results
           bash audit/publish.sh "audit results"
 
       - name: Mark done
         if: always()
         run: |
+          exec > >(tee -a /tmp/run.log) 2>&1
           printf '{"stage":"%s","at":"%s"}\n' "${{ job.status }}" "$(date -u +%FT%TZ)" > results/status.json
+          tail -c 150000 /tmp/run.log > results/log.txt 2>/dev/null || true
           bash audit/publish.sh "status ${{ job.status }}"
