@@ -7,7 +7,8 @@ TIMEOUT = 9
 
 
 def eid(ep):
-    raw = f"{ep['server']}|{ep['port']}|{ep['sni']}|{int(bool(ep.get('quic')))}|{int(bool(ep.get('reality')))"
+    raw = "{}|{}|{}|{}|{}".format(ep["server"], ep["port"], ep["sni"],
+                                  int(bool(ep.get("quic"))), int(bool(ep.get("reality"))))
     return hashlib.sha256(raw.encode()).hexdigest()[:16]
 
 
