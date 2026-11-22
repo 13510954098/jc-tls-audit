@@ -1,0 +1,58 @@
+name: JC TLS Audit
+
+on:
+  push:
+    paths:
+      - "audit/**"
+      - ".github/workflows/jc-tls-audit.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Mark started
+        run: |
+          mkdir -p results
+          printf '{"stage":"started","at":"%s","run":"%s"}\n' "$(date -u +%FT%TZ)" "$GITHUB_RUN_ID" > results/status.json
+          bash audit/publish.sh "status started"
+
+      - name: Fetch subscription
+        run: |
+          for i in 1 2 3 4; do
+            curl -fL --retry 2 -m 120 -o /tmp/jc.yaml "https://aka.doubaocdn.com/s/yRPM6o7bJp" && break
+            sleep 8
+          done
+          python3 -c "import yaml;d=yaml.safe_load(open('/tmp/jc.yaml'));print('proxies',len(d['proxies']))"
+          printf '{"stage":"fetched","bytes":%s}\n' "$(stat -c%s /tmp/jc.yaml)" > results/status.json
+          bash audit/publish.sh "status fetched"
+
+      - name: Install deps
+        run: python3 -m pip install -q pyyaml cryptography
+
+      - name: Build inventory
+        run: |
+          python3 audit/build_endpoints.py /tmp/jc.yaml /tmp/endpoints.json /tmp/nodes.json
+          N=$(python3 -c 'import json;print(len(json.load(open("/tmp/endpoints.json"))))')
+          printf '{"stage":"inventory","endpoints":%s}\n' "$N" > results/status.json
+          bash audit/publish.sh "status inventory"
+
+      - name: TLS audit
+        run: python3 audit/tlsaudit2.py /tmp/endpoints.json /tmp/tls_results.jsonl
+
+      - name: Publish results
+        run: |
+          python3 audit/split2.py /tmp/tls_results.jsonl results
+          bash audit/publish.sh "audit results"
+
+      - name: Mark done
+        if: always()
+        run: |
+          printf '{"stage":"%s","at":"%s"}\n' "${{ job.status }}" "$(date -u +%FT%TZ)" > results/status.json
+          bash audit/publish.sh "status ${{ job.status }}"
