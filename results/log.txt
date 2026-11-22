@@ -1,16 +1,76 @@
 pushed: status started
   % Total    % Received % Xferd  Average Speed  Time    Time    Time   Current
                                  Dload  Upload  Total   Spent   Left   Speed
-  0      0   0      0   0      0      0      0                              0100      2 100      2   0      0      2      0   00:01           00:01      0100      2 100      2   0      0      2      0   00:01           00:01      0
-  0      0   0      0   0      0      0      0                              0100 986.7k 100 986.7k   0      0 589.7k      0   00:01   00:01              0100 986.7k 100 986.7k   0      0 589.7k      0   00:01   00:01              0100 986.7k 100 986.7k   0      0 589.7k      0   00:01   00:01              0
+  0      0   0      0   0      0      0      0                              0  0      0   0      0   0      0      0      0           00:01              0100      2 100      2   0      0      1      0   00:02   00:01   00:01      1100      2 100      2   0      0      1      0   00:02   00:01   00:01      1
+  0      0   0      0   0      0      0      0           00:01              0100 986.7k 100 986.7k   0      0 360.3k      0   00:02   00:02              0100 986.7k 100 986.7k   0      0 360.3k      0   00:02   00:02              0100 986.7k 100 986.7k   0      0 360.3k      0   00:02   00:02              0
 proxies 1801
 pushed: status fetched
 nodes=1801 endpoints=395
 pushed: status inventory
-/home/runner/work/jc-tls-audit/jc-tls-audit/audit/tlsaudit2.py:42: CryptographyDeprecationWarning: Parsed a serial number which wasn't positive (i.e., it was negative or zero), which is disallowed by RFC 5280. Loading this certificate will cause an exception in a future release of cryptography.
+/home/runner/work/jc-tls-audit/jc-tls-audit/audit/tlsaudit3.py:67: CryptographyDeprecationWarning: Parsed a serial number which wasn't positive (i.e., it was negative or zero), which is disallowed by RFC 5280. Loading this certificate will cause an exception in a future release of cryptography.
   cert = x509.load_der_x509_certificate(der, default_backend())
-/home/runner/work/jc-tls-audit/jc-tls-audit/audit/tlsaudit2.py:47: CryptographyDeprecationWarning: Parsed a serial number which wasn't positive (i.e., it was negative or zero), which is disallowed by RFC 5280. Loading this certificate will cause an exception in a future release of cryptography.
+/home/runner/work/jc-tls-audit/jc-tls-audit/audit/tlsaudit3.py:72: CryptographyDeprecationWarning: Parsed a serial number which wasn't positive (i.e., it was negative or zero), which is disallowed by RFC 5280. Loading this certificate will cause an exception in a future release of cryptography.
   serial=format(cert.serial_number, "X")[:40],
-endpoints=395 cert_ok=345
-split done 395 345
+/home/runner/work/jc-tls-audit/jc-tls-audit/audit/tlsaudit3.py:67: CryptographyDeprecationWarning: Parsed a serial number which wasn't positive (i.e., it was negative or zero), which is disallowed by RFC 5280. Loading this certificate will cause an exception in a future release of cryptography.
+  cert = x509.load_der_x509_certificate(der, default_backend())
+/home/runner/work/jc-tls-audit/jc-tls-audit/audit/tlsaudit3.py:72: CryptographyDeprecationWarning: Parsed a serial number which wasn't positive (i.e., it was negative or zero), which is disallowed by RFC 5280. Loading this certificate will cause an exception in a future release of cryptography.
+  serial=format(cert.serial_number, "X")[:40],
+/home/runner/work/jc-tls-audit/jc-tls-audit/audit/tlsaudit3.py:67: CryptographyDeprecationWarning: Parsed a serial number which wasn't positive (i.e., it was negative or zero), which is disallowed by RFC 5280. Loading this certificate will cause an exception in a future release of cryptography.
+  cert = x509.load_der_x509_certificate(der, default_backend())
+/home/runner/work/jc-tls-audit/jc-tls-audit/audit/tlsaudit3.py:72: CryptographyDeprecationWarning: Parsed a serial number which wasn't positive (i.e., it was negative or zero), which is disallowed by RFC 5280. Loading this certificate will cause an exception in a future release of cryptography.
+  serial=format(cert.serial_number, "X")[:40],
+/home/runner/work/jc-tls-audit/jc-tls-audit/audit/tlsaudit3.py:67: CryptographyDeprecationWarning: Parsed a serial number which wasn't positive (i.e., it was negative or zero), which is disallowed by RFC 5280. Loading this certificate will cause an exception in a future release of cryptography.
+  cert = x509.load_der_x509_certificate(der, default_backend())
+/home/runner/work/jc-tls-audit/jc-tls-audit/audit/tlsaudit3.py:72: CryptographyDeprecationWarning: Parsed a serial number which wasn't positive (i.e., it was negative or zero), which is disallowed by RFC 5280. Loading this certificate will cause an exception in a future release of cryptography.
+  serial=format(cert.serial_number, "X")[:40],
+/home/runner/work/jc-tls-audit/jc-tls-audit/audit/tlsaudit3.py:67: CryptographyDeprecationWarning: Parsed a serial number which wasn't positive (i.e., it was negative or zero), which is disallowed by RFC 5280. Loading this certificate will cause an exception in a future release of cryptography.
+  cert = x509.load_der_x509_certificate(der, default_backend())
+/home/runner/work/jc-tls-audit/jc-tls-audit/audit/tlsaudit3.py:72: CryptographyDeprecationWarning: Parsed a serial number which wasn't positive (i.e., it was negative or zero), which is disallowed by RFC 5280. Loading this certificate will cause an exception in a future release of cryptography.
+  serial=format(cert.serial_number, "X")[:40],
+/home/runner/work/jc-tls-audit/jc-tls-audit/audit/tlsaudit3.py:67: CryptographyDeprecationWarning: Parsed a serial number which wasn't positive (i.e., it was negative or zero), which is disallowed by RFC 5280. Loading this certificate will cause an exception in a future release of cryptography.
+  cert = x509.load_der_x509_certificate(der, default_backend())
+/home/runner/work/jc-tls-audit/jc-tls-audit/audit/tlsaudit3.py:72: CryptographyDeprecationWarning: Parsed a serial number which wasn't positive (i.e., it was negative or zero), which is disallowed by RFC 5280. Loading this certificate will cause an exception in a future release of cryptography.
+  serial=format(cert.serial_number, "X")[:40],
+/home/runner/work/jc-tls-audit/jc-tls-audit/audit/tlsaudit3.py:67: CryptographyDeprecationWarning: Parsed a serial number which wasn't positive (i.e., it was negative or zero), which is disallowed by RFC 5280. Loading this certificate will cause an exception in a future release of cryptography.
+  cert = x509.load_der_x509_certificate(der, default_backend())
+/home/runner/work/jc-tls-audit/jc-tls-audit/audit/tlsaudit3.py:72: CryptographyDeprecationWarning: Parsed a serial number which wasn't positive (i.e., it was negative or zero), which is disallowed by RFC 5280. Loading this certificate will cause an exception in a future release of cryptography.
+  serial=format(cert.serial_number, "X")[:40],
+/home/runner/work/jc-tls-audit/jc-tls-audit/audit/tlsaudit3.py:67: CryptographyDeprecationWarning: Parsed a serial number which wasn't positive (i.e., it was negative or zero), which is disallowed by RFC 5280. Loading this certificate will cause an exception in a future release of cryptography.
+  cert = x509.load_der_x509_certificate(der, default_backend())
+/home/runner/work/jc-tls-audit/jc-tls-audit/audit/tlsaudit3.py:72: CryptographyDeprecationWarning: Parsed a serial number which wasn't positive (i.e., it was negative or zero), which is disallowed by RFC 5280. Loading this certificate will cause an exception in a future release of cryptography.
+  serial=format(cert.serial_number, "X")[:40],
+/home/runner/work/jc-tls-audit/jc-tls-audit/audit/tlsaudit3.py:67: CryptographyDeprecationWarning: Parsed a serial number which wasn't positive (i.e., it was negative or zero), which is disallowed by RFC 5280. Loading this certificate will cause an exception in a future release of cryptography.
+  cert = x509.load_der_x509_certificate(der, default_backend())
+/home/runner/work/jc-tls-audit/jc-tls-audit/audit/tlsaudit3.py:72: CryptographyDeprecationWarning: Parsed a serial number which wasn't positive (i.e., it was negative or zero), which is disallowed by RFC 5280. Loading this certificate will cause an exception in a future release of cryptography.
+  serial=format(cert.serial_number, "X")[:40],
+/home/runner/work/jc-tls-audit/jc-tls-audit/audit/tlsaudit3.py:67: CryptographyDeprecationWarning: Parsed a serial number which wasn't positive (i.e., it was negative or zero), which is disallowed by RFC 5280. Loading this certificate will cause an exception in a future release of cryptography.
+  cert = x509.load_der_x509_certificate(der, default_backend())
+/home/runner/work/jc-tls-audit/jc-tls-audit/audit/tlsaudit3.py:72: CryptographyDeprecationWarning: Parsed a serial number which wasn't positive (i.e., it was negative or zero), which is disallowed by RFC 5280. Loading this certificate will cause an exception in a future release of cryptography.
+  serial=format(cert.serial_number, "X")[:40],
+/home/runner/work/jc-tls-audit/jc-tls-audit/audit/tlsaudit3.py:67: CryptographyDeprecationWarning: Parsed a serial number which wasn't positive (i.e., it was negative or zero), which is disallowed by RFC 5280. Loading this certificate will cause an exception in a future release of cryptography.
+  cert = x509.load_der_x509_certificate(der, default_backend())
+/home/runner/work/jc-tls-audit/jc-tls-audit/audit/tlsaudit3.py:72: CryptographyDeprecationWarning: Parsed a serial number which wasn't positive (i.e., it was negative or zero), which is disallowed by RFC 5280. Loading this certificate will cause an exception in a future release of cryptography.
+  serial=format(cert.serial_number, "X")[:40],
+/home/runner/work/jc-tls-audit/jc-tls-audit/audit/tlsaudit3.py:67: CryptographyDeprecationWarning: Parsed a serial number which wasn't positive (i.e., it was negative or zero), which is disallowed by RFC 5280. Loading this certificate will cause an exception in a future release of cryptography.
+  cert = x509.load_der_x509_certificate(der, default_backend())
+/home/runner/work/jc-tls-audit/jc-tls-audit/audit/tlsaudit3.py:72: CryptographyDeprecationWarning: Parsed a serial number which wasn't positive (i.e., it was negative or zero), which is disallowed by RFC 5280. Loading this certificate will cause an exception in a future release of cryptography.
+  serial=format(cert.serial_number, "X")[:40],
+/home/runner/work/jc-tls-audit/jc-tls-audit/audit/tlsaudit3.py:67: CryptographyDeprecationWarning: Parsed a serial number which wasn't positive (i.e., it was negative or zero), which is disallowed by RFC 5280. Loading this certificate will cause an exception in a future release of cryptography.
+  cert = x509.load_der_x509_certificate(der, default_backend())
+/home/runner/work/jc-tls-audit/jc-tls-audit/audit/tlsaudit3.py:72: CryptographyDeprecationWarning: Parsed a serial number which wasn't positive (i.e., it was negative or zero), which is disallowed by RFC 5280. Loading this certificate will cause an exception in a future release of cryptography.
+  serial=format(cert.serial_number, "X")[:40],
+/home/runner/work/jc-tls-audit/jc-tls-audit/audit/tlsaudit3.py:67: CryptographyDeprecationWarning: Parsed a serial number which wasn't positive (i.e., it was negative or zero), which is disallowed by RFC 5280. Loading this certificate will cause an exception in a future release of cryptography.
+  cert = x509.load_der_x509_certificate(der, default_backend())
+/home/runner/work/jc-tls-audit/jc-tls-audit/audit/tlsaudit3.py:72: CryptographyDeprecationWarning: Parsed a serial number which wasn't positive (i.e., it was negative or zero), which is disallowed by RFC 5280. Loading this certificate will cause an exception in a future release of cryptography.
+  serial=format(cert.serial_number, "X")[:40],
+/home/runner/work/jc-tls-audit/jc-tls-audit/audit/tlsaudit3.py:67: CryptographyDeprecationWarning: Parsed a serial number which wasn't positive (i.e., it was negative or zero), which is disallowed by RFC 5280. Loading this certificate will cause an exception in a future release of cryptography.
+  cert = x509.load_der_x509_certificate(der, default_backend())
+/home/runner/work/jc-tls-audit/jc-tls-audit/audit/tlsaudit3.py:72: CryptographyDeprecationWarning: Parsed a serial number which wasn't positive (i.e., it was negative or zero), which is disallowed by RFC 5280. Loading this certificate will cause an exception in a future release of cryptography.
+  serial=format(cert.serial_number, "X")[:40],
+/home/runner/work/jc-tls-audit/jc-tls-audit/audit/tlsaudit3.py:67: CryptographyDeprecationWarning: Parsed a serial number which wasn't positive (i.e., it was negative or zero), which is disallowed by RFC 5280. Loading this certificate will cause an exception in a future release of cryptography.
+  cert = x509.load_der_x509_certificate(der, default_backend())
+/home/runner/work/jc-tls-audit/jc-tls-audit/audit/tlsaudit3.py:72: CryptographyDeprecationWarning: Parsed a serial number which wasn't positive (i.e., it was negative or zero), which is disallowed by RFC 5280. Loading this certificate will cause an exception in a future release of cryptography.
+  serial=format(cert.serial_number, "X")[:40],
+endpoints=395 cert_ok=347
+split done 395 347
 pushed: audit results
