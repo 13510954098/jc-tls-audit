@@ -51,7 +51,7 @@ jobs:
       - name: TLS audit
         run: |
           exec > >(tee -a /tmp/run.log) 2>&1
-          python3 audit/tlsaudit2.py /tmp/endpoints.json /tmp/tls_results.jsonl
+          python3 audit/tlsaudit3.py /tmp/endpoints.json /tmp/tls_results.jsonl
 
       - name: Publish results
         run: |
